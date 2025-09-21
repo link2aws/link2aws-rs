@@ -1,1 +1,7 @@
 /target
+
+# Libraries should not commit Cargo.lock.
+/Cargo.lock
+
+# Tarpaulin is a code coverage tool.
+/tarpaulin-report.html

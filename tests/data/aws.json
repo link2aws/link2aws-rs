@@ -1,0 +1,94 @@
+{
+    "arn:aws-cn:iam::123456789012:user/test": "https://console.amazonaws.cn/iam/home?#/users/test",
+    "arn:aws-us-gov:iam::123456789012:user/test": "https://console.amazonaws-us-gov.com/iam/home?#/users/test",
+
+    "arn:aws:access-analyzer:us-west-1:123456789012:analyzer/ConsoleAnalyzer-a1e73456-f62e-4803-abc0-df02b4241122": "https://us-west-1.console.aws.amazon.com/access-analyzer/home?region=us-west-1#/analyzer/ConsoleAnalyzer-a1e73456-f62e-4803-abc0-df02b4241122",
+
+    "arn:aws:acm:us-east-1:123456789012:certificate/1f6ee793-4064-4a10-9567-f03875640b35": "https://console.aws.amazon.com/acm/home?region=us-east-1#/?id=1f6ee793-4064-4a10-9567-f03875640b35",
+
+    "arn:aws:apigateway:us-west-1::/restapis/abc123defg": "https://us-west-1.console.aws.amazon.com/apigateway/main/apis/abc123defg/resources?api=abc123defg&region=us-west-1",
+
+    "arn:aws:ec2:us-west-1:136693071363:image/ami-0851c4af3ebd71c35": "https://us-west-1.console.aws.amazon.com/ec2/home?region=us-west-1#ImageDetails:imageId=ami-0851c4af3ebd71c35",
+    "arn:aws:ec2:us-east-1:123456789012:instance/1234": "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId=1234",
+    "arn:aws:ec2:us-east-1:123456789012:natgateway/nat-123456": "https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#NatGatewayDetails:natGatewayId=nat-123456",
+    "arn:aws:ec2:us-east-1:123456789012:launch-template/lt-123456": "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#LaunchTemplateDetails:launchTemplateId=lt-123456",
+    "arn:aws:ec2:us-east-1:123456789012:subnet/subnet-12345612312312312" : "https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#SubnetDetails:subnetId=subnet-12345612312312312",
+    "arn:aws:ec2:us-east-1:123456789012:security-group/sg-12345123123123123": "https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#SecurityGroup:groupId=sg-12345123123123123",
+    "arn:aws:ec2:us-east-1:123456789012:snapshot/snap-123456": "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#SnapshotDetails:snapshotId=snap-123456",
+    "arn:aws:ec2:us-east-1:123456789012:volume/vol-123456" : "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#VolumeDetails:volumeId=vol-123456",
+    "arn:aws:ec2:us-east-1:123456789012:vpc/vpc-5432109876" : "https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId=vpc-5432109876",
+    "arn:aws:ec2:us-east-1:123456789012:vpc-endpoint/vpce-123456": "https://us-east-1.console.aws.amazon.com/vpcconsole/home?region=us-east-1#EndpointDetails:vpcEndpointId=vpce-123456",
+
+    "arn:aws:ecs:us-east-1:123456789012:cluster/mycluster": "https://us-east-1.console.aws.amazon.com/ecs/v2/clusters/mycluster?region=us-east-1",
+    "arn:aws:ecs:us-east-1:123456789012:task/mycluster/581a40b2431e6c9c23834b0760666c36": "https://us-east-1.console.aws.amazon.com/ecs/v2/clusters/mycluster/tasks/581a40b2431e6c9c23834b0760666c36?region=us-east-1",
+    "arn:aws:ecs:us-east-1:123456789012:service/mycluster/myservice": "https://us-east-1.console.aws.amazon.com/ecs/v2/clusters/mycluster/services/myservice?region=us-east-1",
+    "arn:aws:ecs:us-east-1:123456789012:task-definition/mytask:1": "https://us-east-1.console.aws.amazon.com/ecs/v2/task-definitions/mytask/1?region=us-east-1",
+    "arn:aws:ecs:us-east-1:123456789012:task-definition/mytask": "https://us-east-1.console.aws.amazon.com/ecs/v2/task-definitions/mytask/?region=us-east-1",
+
+    "arn:aws:dynamodb:us-east-1:123456789012:table/test": "https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#table?name=test",
+
+    "arn:aws:iam::123456789012:oidc-provider/samples.auth0.com/authorize": "https://console.aws.amazon.com/iam/home?#/providers/arn:aws:iam::123456789012:oidc-provider/samples.auth0.com/authorize",
+    "arn:aws:iam::aws:policy/AdministratorAccess": "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/AdministratorAccess",
+    "arn:aws:iam::123456789012:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport": "https://console.aws.amazon.com/iam/home?#/roles/AWSServiceRoleForSupport",
+    "arn:aws:iam::123456789012:user/test": "https://console.aws.amazon.com/iam/home?#/users/test",
+    "arn:aws:iam::123456789012:group/devs": "https://console.aws.amazon.com/iamv2/home#/groups/details/devs",
+
+    "arn:aws:lambda:us-west-1:123456789012:function:my-lambda": "https://us-west-1.console.aws.amazon.com/lambda/home?region=us-west-1#/functions/my-lambda",
+    "arn:aws:lambda:us-west-1:123456789012:layer:test": "https://us-west-1.console.aws.amazon.com/lambda/home?region=us-west-1#/layers/test/versions/1",
+    "arn:aws:lambda:us-west-1:123456789012:layer:test:123": "https://us-west-1.console.aws.amazon.com/lambda/home?region=us-west-1#/layers/test/versions/123",
+
+    "arn:aws:logs:us-east-1:123456789012:log-group:/aws/lambda/SomeStack-ListResourcesForRule1234A123-12345678ABCD:*": "https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#logsV2:log-groups/log-group/$252Faws$252Flambda$252FSomeStack-ListResourcesForRule1234A123-12345678ABCD",
+    "arn:aws:logs:us-east-2:123456789012:log-group:/aws/lambda/dev-hello:*": "https://us-east-2.console.aws.amazon.com/cloudwatch/home?region=us-east-2#logsV2:log-groups/log-group/$252Faws$252Flambda$252Fdev-hello",
+    "arn:aws:logs:us-east-2:123456789012:log-group:test00_11-22/33.44#55:*": "https://us-east-2.console.aws.amazon.com/cloudwatch/home?region=us-east-2#logsV2:log-groups/log-group/test00_11-22$252F33.44$252355",
+
+    "arn:aws:medialive:eu-west-1:123456789012:channel:5317689": "https://eu-west-1.console.aws.amazon.com/medialive/home?region=eu-west-1#/channels/5317689",
+
+    "arn:aws:route53:::healthcheck/b48b0df4-79df-4e41-b69b-9a48b8ebef04": "https://console.aws.amazon.com/route53/healthchecks/home",
+    "arn:aws:route53:::hostedzone/12345ABCDEFGHI": "https://console.aws.amazon.com/route53/home?#resource-record-sets:12345ABCDEFGHI",
+    "arn:aws:route53:::trafficpolicy/4869e13a-1e77-457f-a15e-d0bed0584175": "https://console.aws.amazon.com/route53/trafficflow/home#/policy/4869e13a-1e77-457f-a15e-d0bed0584175",
+    "arn:aws:route53:::trafficpolicyinstance/6461c3a8-3572-4d56-a65b-5dd1c4470cb7": "https://console.aws.amazon.com/route53/trafficflow/home#/modify-records/edit/6461c3a8-3572-4d56-a65b-5dd1c4470cb7",
+
+    "arn:aws:s3:::abc123": "https://s3.console.aws.amazon.com/s3/buckets/abc123",
+
+    "arn:aws:sqs:us-east-1:123456789012:b6a826b4-b44b-11ec-8d84-acde48001122": "https://us-east-1.console.aws.amazon.com/sqs/v2/home?region=us-east-1#/queues/https%3A%2F%2Fsqs.us-east-1.amazonaws.com%2F123456789012%2Fb6a826b4-b44b-11ec-8d84-acde48001122",
+
+    "arn:aws:states:us-east-1:123456789012:stateMachine:StateMachineName": "https://us-east-1.console.aws.amazon.com/states/home?region=us-east-1#/statemachines/view/arn:aws:states:us-east-1:123456789012:stateMachine:StateMachineName",
+    "arn:aws:states:us-east-1:123456789012:execution:StateMachineName:ExecutionId": "https://us-east-1.console.aws.amazon.com/states/home?region=us-east-1#/v2/executions/details/arn:aws:states:us-east-1:123456789012:execution:StateMachineName:ExecutionId",
+
+    "arn:aws:amplify:sa-east-1:384862141196:apps/aaaaaaaaa/branches/master/jobs/0000000181": "https://sa-east-1.console.aws.amazon.com/amplify/home?region=sa-east-1#/aaaaaaaaa/master/181",
+    "arn:aws:amplify:sa-east-1:384862141196:apps/aaaaaaaaa/branches/master/jobs/00000001810": "https://sa-east-1.console.aws.amazon.com/amplify/home?region=sa-east-1#/aaaaaaaaa/master/1810",
+    "arn:aws:amplify:sa-east-1:384862141196:apps/test-null-path": null,
+    
+    "arn:aws:codepipeline:us-east-1:115131055398:my-pipeline": "https://us-east-1.console.aws.amazon.com/codesuite/codepipeline/pipelines/my-pipeline/view?region=us-east-1",
+    
+    "arn:aws:cloudfront::123456789012:distribution/E2YDLZ26QPSF11": "https://console.aws.amazon.com/cloudfront/v4/home#/distributions/E2YDLZ26QPSF11",
+
+    "arn:aws:autoscaling:us-east-1:123456789012:autoScalingGroup:034d7396-90f3-r8si-88f5-ff1dcc0eb80e:autoScalingGroupName/test": "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#AutoScalingGroupDetails:id=test;view=details",
+
+    "arn:aws:wafv2:us-east-1:123456789012:global/webacl/test/f8234ecc-8990-4e63-b25a-ec36764b7701": "https://console.aws.amazon.com/wafv2/homev2/web-acl/test/f8234ecc-8990-4e63-b25a-ec36764b7701/overview?region=global",
+    "arn:aws:wafv2:us-east-1:123456789012:regional/webacl/test/0089db7f-b629-4ba6-bdad-8b2f3ec31c86": "https://console.aws.amazon.com/wafv2/homev2/web-acl/test/0089db7f-b629-4ba6-bdad-8b2f3ec31c86/overview?region=us-east-1",
+
+    "arn:aws:sns:us-east-1:123456789012:sns-topic": "https://console.aws.amazon.com/sns/v3/home?region=us-east-1#/topic/arn:aws:sns:us-east-1:123456789012:sns-topic",
+
+    "arn:aws:rds:us-east-1:123456789012:db:test-db": "https://console.aws.amazon.com/rds/home?region=us-east-1#database:id=test-db",
+    "arn:aws:rds:us-east-1:123456789012:snapshot:rds:test-db-2024-02-04-22-12": "https://console.aws.amazon.com/rds/home?region=us-east-1#db-snapshot:id=rds:test-db-2024-02-04-22-12",
+    "arn:aws:rds:us-east-1:123456789012:subgrp:test-db": "https://console.aws.amazon.com/rds/home?region=us-east-1#db-subnet-group:id=test-db",
+    "arn:aws:rds:us-east-1:123456789012:og:test-db": "https://console.aws.amazon.com/rds/home?region=us-east-1#option-group-details:option-group-name=test-db",
+    "arn:aws:rds:us-east-1:123456789012:cluster:test-cluster": "https://console.aws.amazon.com/rds/home?region=us-east-1#database:id=test-cluster;is-cluster=true",
+
+    "arn:aws:kms:us-east-1:123456789012:key/4bd42b4b-af95-4698-b685-58d3296890fe": "https://console.aws.amazon.com/kms/home?region=us-east-1#/kms/keys/4bd42b4b-af95-4698-b685-58d3296890fe",
+
+    "arn:aws:eks:us-east-1:123456789012:cluster/test-cluster": "https://console.aws.amazon.com/eks/home?region=us-east-1#/clusters/test-cluster",
+    "arn:aws:eks:us-east-1:123456789012:nodegroup/test-cluster/test-workers/a2c51527-da50-031f-1130-c5d5d77be06c": "https://console.aws.amazon.com/eks/home?region=us-east-1#/clusters/test-cluster/nodegroups/test-workers",
+
+    "arn:aws:elasticloadbalancing:us-east-1:1234:loadbalancer/net/k8s-devops-ingressn-5a6b7c/8d9e0f": "https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#LoadBalancer:loadBalancerArn=arn:aws:elasticloadbalancing:us-east-1:1234:loadbalancer/net/k8s-devops-ingressn-5a6b7c/8d9e0f",
+
+    "arn:aws:backup:us-east-1:123456789012:backup-vault:backups-primary": "https://console.aws.amazon.com/backup/home?region=us-east-1#/backupvaults/details/backups-primary",
+
+    "arn:aws:firehose:us-east-1:123456789012:deliverystream/test-stream": "https://console.aws.amazon.com/firehose/home?region=us-east-1#/details/test-stream/monitoring",
+
+    "arn:aws:codeconnections:us-west-2:384862141196:connection/f8234ecc-8990-4e63-b25a-ec36764b7701": "https://us-west-2.console.aws.amazon.com/codesuite/settings/384862141196/us-west-2/codeconnections/connections/f8234ecc-8990-4e63-b25a-ec36764b7701",
+    "arn:aws:codestar-connections:us-west-2:384862141196:connection/f8234ecc-8990-4e63-b25a-ec36764b7701": "https://us-west-2.console.aws.amazon.com/codesuite/settings/384862141196/us-west-2/codestar-connections/connections/f8234ecc-8990-4e63-b25a-ec36764b7701",
+
+    "arn:aws:secretsmanager:us-west-2:123456789012:secret:MySecret9A3F29-vdHtS43BP1i1-knwb3S": "https://us-west-2.console.aws.amazon.com/secretsmanager/secret?name=MySecret9A3F29-vdHtS43BP1i1"
+}

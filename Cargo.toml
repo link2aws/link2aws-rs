@@ -1,6 +1,21 @@
 [package]
 name = "link2aws"
+authors = ["Felix Kaiser"]
 version = "0.1.0"
 edition = "2024"
+license = "ISC"
 
 [dependencies]
+nom = "8.0.0"
+
+[dev-dependencies]
+assert_cmd = "2.0.17"
+serde_json = "1.0.143"
+
+[[bin]]
+name = "link2aws"
+path = "src/main.rs"
+
+[dependencies.clap]
+version = "4.5.47"
+features = ["derive"]
