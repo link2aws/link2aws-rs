@@ -1,9 +1,12 @@
 [package]
 name = "link2aws"
+description = "Converts ARNs to direct links to the AWS console"
+repository = "https://github.com/link2aws/link2aws-rs"
 authors = ["Felix Kaiser"]
 version = "0.1.0"
 edition = "2024"
 license = "ISC"
+readme = "README.md"
 
 [dependencies]
 nom = "8.0.0"
