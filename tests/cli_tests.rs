@@ -1,6 +1,6 @@
 //! Tests the command line interface of the `link2aws` binary.
 
-use assert_cmd::{Command, assert::Assert};
+use assert_cmd::{assert::Assert, cargo::cargo_bin_cmd};
 
 const VALID_ARN_1: &str = "arn:aws:s3:::111";
 const VALID_ARN_1_LINK: &str = "https://s3.console.aws.amazon.com/s3/buckets/111";
@@ -20,14 +20,14 @@ fn verify_help(assert: Assert) {
 
 #[test]
 fn dash_dash_help() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd.arg("--help").assert();
     verify_help(assert);
 }
 
 #[test]
 fn dash_h() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd.arg("-h").assert();
     verify_help(assert);
 }
@@ -40,21 +40,21 @@ fn verify_version(assert: Assert) {
 
 #[test]
 fn dash_dash_version() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd.arg("--version").assert();
     verify_version(assert);
 }
 
 #[test]
 fn dash_capital_v() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd.arg("-V").assert();
     verify_version(assert);
 }
 
 #[test]
 fn one_positional_arn_success() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd.arg(VALID_ARN_1).assert().success();
     let stdout = String::from_utf8(assert.get_output().stdout.clone()).unwrap();
     assert_eq!(stdout, format!("{VALID_ARN_1_LINK}\n"));
@@ -62,7 +62,7 @@ fn one_positional_arn_success() {
 
 #[test]
 fn two_positional_arns_success() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd.arg(VALID_ARN_1).arg(VALID_ARN_2).assert().success();
     let stdout = String::from_utf8(assert.get_output().stdout.clone()).unwrap();
     assert_eq!(stdout, format!("{VALID_ARN_1_LINK}\n{VALID_ARN_2_LINK}\n"));
@@ -70,7 +70,7 @@ fn two_positional_arns_success() {
 
 #[test]
 fn two_positional_arns_one_valid_and_one_invalid_dash_q() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd
         .arg(VALID_ARN_1)
         .arg(INVALID_ARN)
@@ -86,7 +86,7 @@ fn two_positional_arns_one_valid_and_one_invalid_dash_q() {
 
 #[test]
 fn two_positional_arns_one_valid_and_one_invalid_dash_dash_quiet() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd
         .arg(VALID_ARN_1)
         .arg(INVALID_ARN)
@@ -102,7 +102,7 @@ fn two_positional_arns_one_valid_and_one_invalid_dash_dash_quiet() {
 
 #[test]
 fn two_positional_arns_one_valid_and_one_invalid() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd
         .arg(VALID_ARN_1)
         .arg(INVALID_ARN)
@@ -120,7 +120,7 @@ fn two_positional_arns_one_valid_and_one_invalid() {
 
 #[test]
 fn one_stdin_arn_success() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd
         .arg("--stdin")
         .write_stdin(VALID_ARN_1)
@@ -132,7 +132,7 @@ fn one_stdin_arn_success() {
 
 #[test]
 fn two_stdin_arns_success() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd
         .arg("--stdin")
         .write_stdin(format!("{VALID_ARN_1}\n{VALID_ARN_2}"))
@@ -144,7 +144,7 @@ fn two_stdin_arns_success() {
 
 #[test]
 fn two_stdin_arns_with_trailing_newline_success() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd
         .arg("--stdin")
         .write_stdin(format!("{VALID_ARN_1}\n{VALID_ARN_2}\n"))
@@ -156,7 +156,7 @@ fn two_stdin_arns_with_trailing_newline_success() {
 
 #[test]
 fn two_stdin_arns_one_valid_and_one_invalid() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd
         .arg("--stdin")
         .write_stdin(format!("{VALID_ARN_1}\n{INVALID_ARN}\n"))
@@ -174,7 +174,7 @@ fn two_stdin_arns_one_valid_and_one_invalid() {
 
 #[test]
 fn two_stdin_arns_one_valid_and_one_invalid_dash_dash_quiet() {
-    let mut cmd = Command::cargo_bin("link2aws").unwrap();
+    let mut cmd = cargo_bin_cmd!("link2aws");
     let assert = cmd
         .arg("--stdin")
         .arg("--quiet")
