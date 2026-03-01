@@ -338,7 +338,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // AWS CodeBuild
             // ("codebuild", "build") => None,
             // ("codebuild", "build-batch") => None,
-            // ("codebuild", "project") => None,
+            ("codebuild", "project") => Some(format!(
+                "https://{region}.{domain}/codesuite/codebuild/projects/{resource}",
+                region = self.region(),
+                domain = self.domain()?,
+                resource = self.resource_id(),
+            )),
             // ("codebuild", "report") => None,
             // ("codebuild", "report-group") => None,
 
