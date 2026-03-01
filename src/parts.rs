@@ -803,7 +803,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // ("emr-containers", "virtualCluster") => None,
 
             // Amazon Elasticsearch Service
-            // ("es", "domain") => None,
+            ("es", "domain") => Some(format!(
+                "https://{region}.{domain}/aos/home?region={region}#opensearch/domains/{resource}",
+                region = self.region(),
+                domain = self.domain()?,
+                resource = self.resource_id(),
+            )),
 
             // Amazon EventBridge
             // ("events", "archive") => None,
