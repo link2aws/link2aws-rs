@@ -5,7 +5,7 @@ Converts ARNs to direct links to the AWS console.
 Amazon Resource Names (ARNs) are strings like `arn:aws:s3:::abc123`
 that uniquely identify resources in Amazon Web Services (AWS).
 
-* Copyright (c) 2020-2025, Felix Kaiser.
+* Copyright (c) 2020-2026, Felix Kaiser.
 * License: ISC (<https://spdx.org/licenses/ISC.html>).
 
 ## How to use
