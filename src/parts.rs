@@ -894,7 +894,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // ("glue", "crawler") => None,
             // ("glue", "database") => None,
             // ("glue", "devendpoint") => None,
-            // ("glue", "job") => None,
+            ("glue", "job") => Some(format!(
+                "https://{region}.{domain}/gluestudio/home?region={region}#/editor/job/{resource}/script",
+                region = self.region(),
+                domain = self.domain()?,
+                resource = self.resource_id(),
+            )),
             // ("glue", "mlTransform") => None,
             // ("glue", "registry") => None,
             // ("glue", "schema") => None,
