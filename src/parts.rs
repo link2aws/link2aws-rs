@@ -1095,7 +1095,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
 
             // Amazon Kinesis
             // ("kinesis", "consumer") => None,
-            // ("kinesis", "stream") => None,
+            ("kinesis", "stream") => Some(format!(
+                "https://{region}.{domain}/kinesis/home?region={region}#/streams/details/{resource}/details",
+                region = self.region(),
+                domain = self.domain()?,
+                resource = self.resource_id(),
+            )),
 
             // Amazon Kinesis Analytics V2
             // ("kinesisanalytics", "application") => None,
