@@ -106,7 +106,7 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
 
             // Amazon EC2
             ("acm", "certificate") => Some(format!(
-                "https://{domain}/acm/home?region={region}#/?id={resource}",
+                "https://{domain}/acm/home?region={region}#/certificates/{resource}",
                 domain = self.domain()?,
                 region = self.region(),
                 resource = self.resource_id(),
@@ -338,7 +338,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // AWS CodeBuild
             // ("codebuild", "build") => None,
             // ("codebuild", "build-batch") => None,
-            // ("codebuild", "project") => None,
+            ("codebuild", "project") => Some(format!(
+                "https://{region}.{domain}/codesuite/codebuild/projects/{resource}",
+                region = self.region(),
+                domain = self.domain()?,
+                resource = self.resource_id(),
+            )),
             // ("codebuild", "report") => None,
             // ("codebuild", "report-group") => None,
 
@@ -550,6 +555,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // ("ec2", "egress-only-internet-gateway") => None,
             // ("ec2", "elastic-gpu") => None,
             // ("ec2", "elastic-ip") => None,
+            ("ec2", "eip-allocation") => Some(format!(
+                "https://{region}.{domain}/ec2/home?region={region}#Addresses:v=3;search=:{resource}",
+                region = self.region(),
+                domain = self.domain()?,
+                resource = self.resource_id(),
+            )),
             // ("ec2", "export-image-task") => None,
             // ("ec2", "export-instance-task") => None,
             // ("ec2", "fleet") => None,
@@ -653,7 +664,13 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // ("ec2", "vpn-gateway") => None,
 
             // Amazon Elastic Container Registry
-            // ("ecr", "repository") => None,
+            ("ecr", "repository") => Some(format!(
+                "https://{region}.{domain}/ecr/repositories/private/{account}/{resource}",
+                region = self.region(),
+                domain = self.domain()?,
+                account = self.account(),
+                resource = self.resource_id(),
+            )),
 
             // Amazon Elastic Container Registry Public
             // ("ecr-public", "registry") => None,
@@ -739,7 +756,11 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // ("elasticbeanstalk", "application") => None,
             // ("elasticbeanstalk", "applicationversion") => None,
             // ("elasticbeanstalk", "configurationtemplate") => None,
-            // ("elasticbeanstalk", "environment") => None,
+            ("elasticbeanstalk", "environment") => Some(format!(
+                "https://{region}.{domain}/elasticbeanstalk/home?region={region}#/environments",
+                region = self.region(),
+                domain = self.domain()?,
+            )),
             // ("elasticbeanstalk", "platform") => None,
             // ("elasticbeanstalk", "solutionstack") => None,
 
@@ -782,7 +803,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // ("emr-containers", "virtualCluster") => None,
 
             // Amazon Elasticsearch Service
-            // ("es", "domain") => None,
+            ("es", "domain") => Some(format!(
+                "https://{region}.{domain}/aos/home?region={region}#opensearch/domains/{resource}",
+                region = self.region(),
+                domain = self.domain()?,
+                resource = self.resource_id(),
+            )),
 
             // Amazon EventBridge
             // ("events", "archive") => None,
@@ -868,7 +894,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // ("glue", "crawler") => None,
             // ("glue", "database") => None,
             // ("glue", "devendpoint") => None,
-            // ("glue", "job") => None,
+            ("glue", "job") => Some(format!(
+                "https://{region}.{domain}/gluestudio/home?region={region}#/editor/job/{resource}/script",
+                region = self.region(),
+                domain = self.domain()?,
+                resource = self.resource_id(),
+            )),
             // ("glue", "mlTransform") => None,
             // ("glue", "registry") => None,
             // ("glue", "schema") => None,
@@ -1064,7 +1095,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
 
             // Amazon Kinesis
             // ("kinesis", "consumer") => None,
-            // ("kinesis", "stream") => None,
+            ("kinesis", "stream") => Some(format!(
+                "https://{region}.{domain}/kinesis/home?region={region}#/streams/details/{resource}/details",
+                region = self.region(),
+                domain = self.domain()?,
+                resource = self.resource_id(),
+            )),
 
             // Amazon Kinesis Analytics V2
             // ("kinesisanalytics", "application") => None,
@@ -1349,7 +1385,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             )),
             // ("rds", "cluster-endpoint") => None,
             // ("rds", "cluster-pg") => None,
-            // ("rds", "cluster-snapshot") => None,
+            ("rds", "cluster-snapshot") => Some(format!(
+                "https://{domain}/rds/home?region={region}#db-snapshot:id={resource}",
+                domain = self.domain()?,
+                region = self.region(),
+                resource = self.resource_id(),
+            )),
             ("rds", "db") => Some(format!(
                 "https://{domain}/rds/home?region={region}#database:id={resource}",
                 domain = self.domain()?,
