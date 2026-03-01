@@ -1366,7 +1366,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             )),
             // ("rds", "cluster-endpoint") => None,
             // ("rds", "cluster-pg") => None,
-            // ("rds", "cluster-snapshot") => None,
+            ("rds", "cluster-snapshot") => Some(format!(
+                "https://{domain}/rds/home?region={region}#db-snapshot:id={resource}",
+                domain = self.domain()?,
+                region = self.region(),
+                resource = self.resource_id(),
+            )),
             ("rds", "db") => Some(format!(
                 "https://{domain}/rds/home?region={region}#database:id={resource}",
                 domain = self.domain()?,
