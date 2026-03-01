@@ -106,7 +106,7 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
 
             // Amazon EC2
             ("acm", "certificate") => Some(format!(
-                "https://{domain}/acm/home?region={region}#/?id={resource}",
+                "https://{domain}/acm/home?region={region}#/certificates/{resource}",
                 domain = self.domain()?,
                 region = self.region(),
                 resource = self.resource_id(),
