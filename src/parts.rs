@@ -756,7 +756,11 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // ("elasticbeanstalk", "application") => None,
             // ("elasticbeanstalk", "applicationversion") => None,
             // ("elasticbeanstalk", "configurationtemplate") => None,
-            // ("elasticbeanstalk", "environment") => None,
+            ("elasticbeanstalk", "environment") => Some(format!(
+                "https://{region}.{domain}/elasticbeanstalk/home?region={region}#/environments",
+                region = self.region(),
+                domain = self.domain()?,
+            )),
             // ("elasticbeanstalk", "platform") => None,
             // ("elasticbeanstalk", "solutionstack") => None,
 
