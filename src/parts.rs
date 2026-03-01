@@ -550,6 +550,12 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // ("ec2", "egress-only-internet-gateway") => None,
             // ("ec2", "elastic-gpu") => None,
             // ("ec2", "elastic-ip") => None,
+            ("ec2", "eip-allocation") => Some(format!(
+                "https://{region}.{domain}/ec2/home?region={region}#Addresses:v=3;search=:{resource}",
+                region = self.region(),
+                domain = self.domain()?,
+                resource = self.resource_id(),
+            )),
             // ("ec2", "export-image-task") => None,
             // ("ec2", "export-instance-task") => None,
             // ("ec2", "fleet") => None,
