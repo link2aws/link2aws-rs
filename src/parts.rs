@@ -659,7 +659,13 @@ pub trait ArnParts<'a>: ArnPartsHelper<'a> {
             // ("ec2", "vpn-gateway") => None,
 
             // Amazon Elastic Container Registry
-            // ("ecr", "repository") => None,
+            ("ecr", "repository") => Some(format!(
+                "https://{region}.{domain}/ecr/repositories/private/{account}/{resource}",
+                region = self.region(),
+                domain = self.domain()?,
+                account = self.account(),
+                resource = self.resource_id(),
+            )),
 
             // Amazon Elastic Container Registry Public
             // ("ecr-public", "registry") => None,
